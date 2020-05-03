@@ -1,0 +1,316 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style1.css') }}">
+    </head>
+   <body>
+    <div class="container">
+
+            <nav class="navbar navbar-light">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ url_for('static',filename='b.jpg') }}" width="80" height="80" class="d-inline-block align-top" alt="">  
+                </a>
+                <h1 class="text-info text-center">Screening Test</h1>
+            </nav>
+        <form method="POST">
+
+            <fieldset id="group0" class="row">
+                <label><h3>Enter your age</h3></label>
+                <input class="form-control col-md-3" type="text" name="group0">
+            </fieldset>
+            <br>
+            <fieldset id="group1" class="row">
+                <nav aria-label="breadcrumb" class="topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">What is your Gender?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group1" value="Male" checked>
+                    <label class="form-check-label">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group1" value="Female" checked>
+                    <label class="form-check-label">
+                        Female
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group1" value="Other" checked>
+                    <label class="form-check-label">
+                        Other
+                    </label>
+                </div>
+                <br>
+            </fieldset>
+            
+            <fieldset id="group2" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Are you self employed?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group2" value="Yes" checked>
+                    <label class="form-check-label">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group2" value="No" checked>
+                    <label class="form-check-label">
+                        No
+                    </label>
+                </div>
+            </fieldset>
+            <br>
+
+            <fieldset id="group3" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Any one from your family experiencing mental disorders?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group3" value="Yes" checked>
+                    <label class="form-check-label">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group3" value="No" checked>
+                    <label class="form-check-label">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group3" value="Don't Know" checked>
+                    <label class="form-check-label">
+                        Don't Know
+                    </label>
+                </div>
+            </fieldset>
+            <br>
+
+            <fieldset id="group4" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Have you ever taken a treatment for mental health in past.</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group4" value="Yes" checked>
+                    <label class="form-check-label">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group4" value="No" checked>
+                    <label class="form-check-label">
+                        No
+                    </label>
+                </div>
+            </fieldset>
+            <br>
+
+            <fieldset id="group5" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Work from home?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group5" value="Yes" checked>
+                    <label class="form-check-label">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group5" value="No" checked>
+                    <label class="form-check-label">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group5" value="Don't Know" checked>
+                    <label class="form-check-label">
+                        Don't Know
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+            <fieldset id="group6" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Involved working with technologies?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group6" value="Yes" checked>
+                    <label class="form-check-label">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group6" value="No" checked>
+                    <label class="form-check-label">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group6" value="Kind off" checked>
+                    <label class="form-check-label">
+                        Kind Off
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+            <fieldset id="group7" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Does your employer provide any health benefits?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group7" value="Yes" checked>
+                    <label class="form-check-label">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group7" value="No" checked>
+                    <label class="form-check-label">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group7" value="Don't Know" checked>
+                    <label class="form-check-label">
+                        Don't Know
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+            <fieldset id="group8" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Do you know about health benefits provided by your employer?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group8" value="Yes" checked>
+                    <label class="form-check-label">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group8" value="No" checked>
+                    <label class="form-check-label">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group8" value="Don't Know" checked>
+                    <label class="form-check-label">
+                        Don't Know
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+            <fieldset id="group9" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Have your been to wellness program</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group9" value="Yes" checked>
+                    <label class="form-check-label">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group9" value="No" checked>
+                    <label class="form-check-label">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group9" value="May be" checked>
+                    <label class="form-check-label">
+                        May be
+                    </label>
+                </div>
+            </fieldset>
+                <br>
+
+            <fieldset id="group10" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Employer seek to help you with mental issues</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group10" value="Yes" checked>
+                    <label class="form-check-label">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group10" value="No" checked>
+                    <label class="form-check-label">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group10" value="May be" checked>
+                    <label class="form-check-label">
+                        May be
+                    </label>
+                </div>
+            </fieldset>
+                    <br>
+
+            <fieldset id="group11" class="row">
+                <nav aria-label="breadcrumb" class="question topMargin">
+                    <ol class="breadcrumb question">
+                        <li class="breadcrumb-item active choice font-weight-bold" aria-current="page">Have you ever taken advantage of your mental health?</li>
+                    </ol>
+                </nav>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group11" value="Yes" checked>
+                    <label class="form-check-label">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group11" value="No" checked>
+                    <label class="form-check-label">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="group11" value="May be" checked>
+                    <label class="form-check-label">
+                        May be
+                    </label>
+                </div>
+                <div>
+                    <br>
+                    <input class="btn btn-warning" type="submit">
+                </div>
+            </fieldset>
+                <br>
+        </form>
+    </div>
+   </body>
+</html>
