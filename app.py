@@ -27,49 +27,70 @@ parser.add_argument('mental_health', type=str)
 def funcPost():
     c = None
     if request.method == 'POST':
-        age = request.form['group0']
+        try:
+            age = int(request.form['group0'])
+            age2 = age
+            if age2 < 15:
+                age = 0
+            elif age2 > 15 and age2 <= 35:
+                age = 2
+            else:
+                age = 1
+        except:
+            age = 1
 
-        dict1 = {"Male":1, "Female":0, "Other":2}
+        dict1 = {"Male":2, "Female":0, "Other":1}
         gender = dict1[request.form['group1']]
 
-        dict1 = {"Yes":1, "No":0}
+        dict1 = {"Yes":0, "No":1}
         self_emp = dict1[request.form['group2']]
 
-        dict1 = {"Yes":2, "Don't Know":0, "No":1}
-        mental_disorders = dict1[request.form['group3']]
+        dict1 = {"Yes":2, "Don't Know":1, "No":0}
+        family_mental_disorders = dict1[request.form['group3']]
 
         dict1 = {"Yes":1, "No":0}
         mental_healthinPast = dict1[request.form['group4']]
 
-        dict1 = {"Yes":2, "No":1, "Don't Know":0}
+        dict1 = {"Yes":1, "No":2, "Sometimes":0}
         work_from_home = dict1[request.form['group5']]
 
-        dict1 = {"Yes":2, "No":1, "Kind off":0}
-        technology = dict1[request.form['group6']]
+        dict1 = {"Yes":2, "No":0, "Kind off":1}
+        long_working_hours = dict1[request.form['group6']]
 
-        dict1 = {"Yes":2, "No":1, "Don't Know":0}
-        benefits = dict1[request.form['group7']]
+        dict1 = {"Yes":0, "No":2, "Sometimes":1}
+        work_recognition = dict1[request.form['group8']]
 
-        dict1 = {"Yes":2, "No":1, "Don't Know":0}
-        know_benefits = dict1[request.form['group8']]
+        dict1 = {"Good":0, "Bad":2, "Mixed":1}
+        culture = dict1[request.form['group9']]
 
-        dict1 = {"Yes":2, "No":1, "May be":0}
-        wellness = dict1[request.form['group9']]
+#        dict1 = {"Yes":2, "No":1, "May be":0}
+#        wellness = dict1[request.form['group9']]
 
-        dict1 = {"Yes":2, "No":1, "May be":0}
+        dict1 = {"Yes":0, "No":2, "Sometimes":1}
         mental_issues = dict1[request.form['group10']]
 
-        dict1 = {"Yes":2, "No":1, "May be":0}
-        mental_health = dict1[request.form['group11']]
+        dict1 = {"Yes":0, "No":2, "May be":1}
+        developed = dict1[request.form['group11']]
 
-        arr1 = [age, gender, self_emp, mental_disorders, mental_healthinPast, work_from_home, technology, benefits, know_benefits, wellness, mental_issues, mental_health]
-        try:
-            c = makePrediction(np.array(arr1,dtype='int'))
-            c = c[0]
-        except:
-            c = 2
+#        arr1 = [age, gender, self_emp, mental_disorders, mental_healthinPast, work_from_home, technology, benefits, know_benefits, wellness, mental_issues, mental_health]
+        
+        print(age)
+        print(gender)
+        print(work_from_home)
+        result = age + gender + self_emp + family_mental_disorders + mental_healthinPast + work_from_home + long_working_hours + work_recognition + culture + mental_issues + developed
+#        try:
+#            #c = makePrediction(np.array(arr1,dtype='int'))
+#            #c = c[0]
+#        except:
+#            c = 2
         dict1 = {0:"Mild", 1:"No", 2:"Depression"}
-        return render_template('results.html', result=dict1[c])
+        if result <= 8:
+            result = 1
+        elif result <= 15:
+            result = 0
+        else:
+            result = 2
+        return render_template('results.html', result = dict1[result])
     return render_template('survey.html', result = c)
 
 # @app.route('/query')
